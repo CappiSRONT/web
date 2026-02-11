@@ -173,6 +173,7 @@ public class CountrySearchServer {
             "        }\n" +
             "        input[type='text']:focus {\n" +
             "            border-color: #667eea;\n" +
+            "            margin-top: 30px;\n" +
             "            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);\n" +
             "        }\n" +
             "        button {\n" +
@@ -185,7 +186,6 @@ public class CountrySearchServer {
             "            border: none;\n" +
             "            border-radius: 12px;\n" +
             "            cursor: pointer;\n" +
-            "            margin-bottom: 25px;\n" +
             "            transition: transform 0.2s, box-shadow 0.2s;\n" +
             "        }\n" +
             "        button:hover {\n" +
