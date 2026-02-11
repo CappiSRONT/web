@@ -173,7 +173,7 @@ public class CountrySearchServer {
             "            transition: all 0.3s;\n" +
             "        }\n" +
             "        input[type='text']:focus {\n" +
-            "            border-color: #667eea;\n" +
+            "            border-color: #a3a3a3;\n" +
             "            margin-top: 30px;\n" +
             "            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);\n" +
             "        }\n" +
@@ -183,7 +183,7 @@ public class CountrySearchServer {
             "            font-size: 1.1em;\n" +
             "            font-weight: 600;\n" +
             "            color: white;\n" +
-            "            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\n" +
+            "            background: linear-gradient(135deg, #1e1e1e 0%, #ababab 100%);\n" +
             "            border: none;\n" +
             "            border-radius: 12px;\n" +
             "            cursor: pointer;\n" +
@@ -206,7 +206,7 @@ public class CountrySearchServer {
             "            50% { transform: translateY(-20px); }\n" +
             "        }\n" +
             "        .info {\n" +
-            "            color: #a0aec0;\n" +
+            "            color: #c7c7c7;\n" +
             "            font-size: 0.95em;\n" +
             "        }\n" +
             "    </style>\n" +
