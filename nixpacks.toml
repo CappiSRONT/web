@@ -1,0 +1,8 @@
+[phases.build]
+cmds = ["javac CountrySearchServer.java"]
+
+[phases.start]
+cmd = "java CountrySearchServer"
+
+[variables]
+NIXPACKS_JDK_VERSION = "17"
