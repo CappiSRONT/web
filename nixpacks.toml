@@ -6,3 +6,6 @@ cmds = ["javac -encoding UTF-8 CountrySearchServer.java"]
 
 [phases.start]
 cmd = "java CountrySearchServer"
+
+[start]
+includeFiles = ["countries.csv"]
