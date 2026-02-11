@@ -148,12 +148,12 @@ public class CountrySearchServer {
             "            text-align: center;\n" +
             "        }\n" +
             "        h1 {\n" +
-            "            color: #2d3748;\n" +
+            "            color: #454545;\n" +
             "            font-size: 2.5em;\n" +
             "            margin-bottom: 10px;\n" +
             "        }\n" +
             "        .subtitle {\n" +
-            "            color: #718096;\n" +
+            "            color: #949494;\n" +
             "            font-size: 1.1em;\n" +
             "            margin-bottom: 40px;\n" +
             "        }\n" +
@@ -241,7 +241,7 @@ public class CountrySearchServer {
         html.append("        * { margin: 0; padding: 0; box-sizing: border-box; }\n");
         html.append("        body {\n");
         html.append("            font-family: ui-serif, 'Charter', 'Bitstream Charter', Georgia, Cambria, 'Times New Roman', Times, serif;\n");
-        html.append("            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\n");
+        html.append("            background: linear-gradient(135deg, #1e1e1e 0%, #ababab 100%);\n");
         html.append("            min-height: 100vh;\n");
         html.append("            padding: 40px 20px;\n");
         html.append("        }\n");
@@ -280,7 +280,7 @@ public class CountrySearchServer {
         html.append("            font-size: 1em;\n");
         html.append("            font-weight: 600;\n");
         html.append("            color: white;\n");
-        html.append("            background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);\n");
+        html.append("            background: linear-gradient(135deg, #48bb78 0%, #007e29 100%);\n");
         html.append("            border: none;\n");
         html.append("            border-radius: 8px;\n");
         html.append("            cursor: pointer;\n");
@@ -302,14 +302,14 @@ public class CountrySearchServer {
         html.append("        }\n");
         html.append("        .field-label {\n");
         html.append("            font-weight: 600;\n");
-        html.append("            color: #4a5568;\n");
+        html.append("            color: #626262;\n");
         html.append("            margin-bottom: 5px;\n");
         html.append("            font-size: 0.9em;\n");
         html.append("            text-transform: uppercase;\n");
         html.append("            letter-spacing: 0.5px;\n");
         html.append("        }\n");
         html.append("        .field-value {\n");
-        html.append("            color: #2d3748;\n");
+        html.append("            color: #434343;\n");
         html.append("            font-size: 1.05em;\n");
         html.append("            line-height: 1.6;\n");
         html.append("        }\n");
@@ -324,7 +324,7 @@ public class CountrySearchServer {
         html.append("        }\n");
         html.append("        .all-data-header {\n");
         html.append("            font-size: 1.3em;\n");
-        html.append("            color: #2d3748;\n");
+        html.append("            color: #454545;\n");
         html.append("            margin-bottom: 15px;\n");
         html.append("            font-weight: 600;\n");
         html.append("        }\n");
@@ -347,7 +347,7 @@ public class CountrySearchServer {
         html.append("            padding: 60px 20px;\n");
         html.append("        }\n");
         html.append("        .no-results h2 {\n");
-        html.append("            color: #2d3748;\n");
+        html.append("            color: #404040;\n");
         html.append("            font-size: 2em;\n");
         html.append("            margin-bottom: 15px;\n");
         html.append("        }\n");
@@ -363,7 +363,7 @@ public class CountrySearchServer {
         html.append("            padding: 18px 24px;\n");
         html.append("            margin-bottom: 12px;\n");
         html.append("            background: #f7fafc;\n");
-        html.append("            color: #2d3748;\n");
+        html.append("            color: #404040;\n");
         html.append("            text-decoration: none;\n");
         html.append("            border-radius: 10px;\n");
         html.append("            border-left: 4px solid #667eea;\n");
@@ -442,7 +442,7 @@ public class CountrySearchServer {
             html.append("            allData.classList.toggle('visible');\n");
             html.append("            if (allData.classList.contains('visible')) {\n");
             html.append("                btn.textContent = 'Hide All Data';\n");
-            html.append("                btn.style.background = 'linear-gradient(135deg, #f56565 0%, #e53e3e 100%)';\n");
+            html.append("                btn.style.background = 'linear-gradient(135deg, #f56565 0%, #ac1010 100%)';\n");
             html.append("            } else {\n");
             html.append("                btn.textContent = 'Show All Data';\n");
             html.append("                btn.style.background = 'linear-gradient(135deg, #48bb78 0%, #38a169 100%)';\n");
