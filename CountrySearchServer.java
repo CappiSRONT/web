@@ -211,15 +211,15 @@ public class CountrySearchServer {
             "</head>\n" +
             "<body>\n" +
             "    <div class='container'>\n" +
-            "        <div class='globe'>🌍</div>\n" +
+            "        <div class='globe'>?</div>\n" +
             "        <h1>The World FootBook</h1>\n" +
             "        <p class='subtitle'>Explore detailed information about any country, from Italy to Canada.</p>\n" +
             "        <form action='/search' method='GET' class='search-box'>\n\n" +
             "            <input type='text' name='q' placeholder='Enter country name...' required autofocus>\n" +
             "            <button type='submit'>Search</button>\n" +
             "        </form>\n" +
-            "        <p class='info'>💡 Try searching: United States, Germany, Japan, Brazil</p>\n" +
-            "        <p class='info' style='margin-top: 10px;'>📊 " + countries.size() + " countries loaded</p>\n" +
+            "        <p class='info'>Try searching: United States, Germany, Japan, Brazil.</p>\n" +
+            "        <p class='info' style='margin-top: 10px;'>" + countries.size() + " countries loaded.</p>\n" +
             "    </div>\n" +
             "</body>\n" +
             "</html>";
@@ -408,12 +408,12 @@ public class CountrySearchServer {
             
             // Toggle button
             html.append("            <div class='toggle-container'>\n");
-            html.append("                <button class='toggle-button' onclick='toggleAllData()' id='toggleBtn'>📋 Show All Data</button>\n");
+            html.append("                <button class='toggle-button' onclick='toggleAllData()' id='toggleBtn'>Show All Data</button>\n");
             html.append("            </div>\n");
             
             // All additional data (hidden by default)
             html.append("            <div class='all-data' id='allData'>\n");
-            html.append("                <div class='all-data-header'>📊 Complete Database Information</div>\n");
+            html.append("                <div class='all-data-header'>Complete Database Information</div>\n");
             
             // Display ALL fields from CSV
             for (Map.Entry<String, String> entry : country.entrySet()) {
@@ -439,10 +439,10 @@ public class CountrySearchServer {
             html.append("            const btn = document.getElementById('toggleBtn');\n");
             html.append("            allData.classList.toggle('visible');\n");
             html.append("            if (allData.classList.contains('visible')) {\n");
-            html.append("                btn.textContent = '📋 Hide All Data';\n");
+            html.append("                btn.textContent = 'Hide All Data';\n");
             html.append("                btn.style.background = 'linear-gradient(135deg, #f56565 0%, #e53e3e 100%)';\n");
             html.append("            } else {\n");
-            html.append("                btn.textContent = '📋 Show All Data';\n");
+            html.append("                btn.textContent = 'Show All Data';\n");
             html.append("                btn.style.background = 'linear-gradient(135deg, #48bb78 0%, #38a169 100%)';\n");
             html.append("            }\n");
             html.append("        }\n");
