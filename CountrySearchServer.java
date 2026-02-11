@@ -126,7 +126,7 @@ public class CountrySearchServer {
             "<head>\n" +
             "    <meta charset='UTF-8'>\n" +
             "    <meta name='viewport' content='width=device-width, initial-scale=1.0'>\n" +
-            "    <title>World Country Information Search</title>\n" +
+            "    <title>The World FootBook</title>\n" +
             "    <style>\n" +
             "        * { margin: 0; padding: 0; box-sizing: border-box; }\n" +
             "        body {\n" +
@@ -236,7 +236,7 @@ public class CountrySearchServer {
         html.append("<head>\n");
         html.append("    <meta charset='UTF-8'>\n");
         html.append("    <meta name='viewport' content='width=device-width, initial-scale=1.0'>\n");
-        html.append("    <title>Search Results - ").append(escapeHtml(query)).append("</title>\n");
+        html.append("    <title>The World FootBook - ").append(escapeHtml(query)).append("</title>\n");
         html.append("    <style>\n");
         html.append("        * { margin: 0; padding: 0; box-sizing: border-box; }\n");
         html.append("        body {\n");
