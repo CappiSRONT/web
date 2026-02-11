@@ -179,8 +179,8 @@ public class CountrySearchServer {
             "            padding: 18px;\n" +
             "            font-size: 1.1em;\n" +
             "            font-weight: 600;\n" +
-            "            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\n" +
             "            color: white;\n" +
+            "            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\n" +
             "            border: none;\n" +
             "            border-radius: 12px;\n" +
             "            cursor: pointer;\n" +
@@ -188,19 +188,23 @@ public class CountrySearchServer {
             "        }\n" +
             "        button:hover {\n" +
             "            transform: translateY(-2px);\n" +
-            "            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);\n" +
+            "            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);\n" +
             "        }\n" +
             "        button:active {\n" +
             "            transform: translateY(0);\n" +
             "        }\n" +
-            "        .info {\n" +
-            "            color: #718096;\n" +
-            "            font-size: 0.9em;\n" +
-            "            margin-top: 20px;\n" +
-            "        }\n" +
             "        .globe {\n" +
             "            font-size: 4em;\n" +
             "            margin-bottom: 20px;\n" +
+            "            animation: float 3s ease-in-out infinite;\n" +
+            "        }\n" +
+            "        @keyframes float {\n" +
+            "            0%, 100% { transform: translateY(0px); }\n" +
+            "            50% { transform: translateY(-20px); }\n" +
+            "        }\n" +
+            "        .info {\n" +
+            "            color: #a0aec0;\n" +
+            "            font-size: 0.95em;\n" +
             "        }\n" +
             "    </style>\n" +
             "</head>\n" +
@@ -208,11 +212,9 @@ public class CountrySearchServer {
             "    <div class='container'>\n" +
             "        <div class='globe'>🌍</div>\n" +
             "        <h1>Country Search</h1>\n" +
-            "        <p class='subtitle'>Explore detailed information about any country in the world</p>\n" +
-            "        <form action='/search' method='GET'>\n" +
-            "            <div class='search-box'>\n" +
-            "                <input type='text' name='q' placeholder='Enter country name...' autofocus required>\n" +
-            "            </div>\n" +
+            "        <p class='subtitle'>Explore detailed information about any country</p>\n" +
+            "        <form action='/search' method='GET' class='search-box'>\n" +
+            "            <input type='text' name='q' placeholder='Enter country name...' required autofocus>\n" +
             "            <button type='submit'>Search</button>\n" +
             "        </form>\n" +
             "        <p class='info'>💡 Try searching: United States, Germany, Japan, Brazil</p>\n" +
@@ -235,84 +237,136 @@ public class CountrySearchServer {
         html.append("    <style>\n");
         html.append("        * { margin: 0; padding: 0; box-sizing: border-box; }\n");
         html.append("        body {\n");
-        html.append("            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;\n");
-        html.append("            background: #f7fafc;\n");
-        html.append("            padding: 20px;\n");
+        html.append("            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;\n");
+        html.append("            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\n");
+        html.append("            min-height: 100vh;\n");
+        html.append("            padding: 40px 20px;\n");
         html.append("        }\n");
         html.append("        .header {\n");
-        html.append("            max-width: 900px;\n");
-        html.append("            margin: 0 auto 30px;\n");
-        html.append("            background: white;\n");
-        html.append("            padding: 30px;\n");
-        html.append("            border-radius: 12px;\n");
-        html.append("            box-shadow: 0 2px 8px rgba(0,0,0,0.1);\n");
+        html.append("            text-align: center;\n");
+        html.append("            color: white;\n");
+        html.append("            margin-bottom: 30px;\n");
         html.append("        }\n");
-        html.append("        .back-link {\n");
-        html.append("            display: inline-block;\n");
-        html.append("            color: #667eea;\n");
-        html.append("            text-decoration: none;\n");
-        html.append("            margin-bottom: 20px;\n");
-        html.append("            font-weight: 500;\n");
-        html.append("        }\n");
-        html.append("        .back-link:hover { text-decoration: underline; }\n");
-        html.append("        h1 { color: #2d3748; margin-bottom: 10px; }\n");
-        html.append("        .subtitle { color: #718096; }\n");
+        html.append("        h1 { font-size: 2.5em; margin-bottom: 10px; }\n");
+        html.append("        .subtitle { font-size: 1.2em; opacity: 0.9; }\n");
         html.append("        .container {\n");
         html.append("            max-width: 900px;\n");
         html.append("            margin: 0 auto;\n");
+        html.append("            background: white;\n");
+        html.append("            border-radius: 20px;\n");
+        html.append("            box-shadow: 0 20px 60px rgba(0,0,0,0.3);\n");
+        html.append("            padding: 40px;\n");
         html.append("        }\n");
         html.append("        .country-card {\n");
-        html.append("            background: white;\n");
-        html.append("            border-radius: 12px;\n");
-        html.append("            padding: 30px;\n");
-        html.append("            margin-bottom: 20px;\n");
-        html.append("            box-shadow: 0 2px 8px rgba(0,0,0,0.1);\n");
+        html.append("            margin-bottom: 30px;\n");
         html.append("        }\n");
         html.append("        .country-name {\n");
         html.append("            font-size: 2em;\n");
         html.append("            color: #2d3748;\n");
         html.append("            margin-bottom: 20px;\n");
+        html.append("            padding-bottom: 15px;\n");
         html.append("            border-bottom: 3px solid #667eea;\n");
-        html.append("            padding-bottom: 10px;\n");
+        html.append("        }\n");
+        html.append("        .toggle-container {\n");
+        html.append("            margin: 20px 0;\n");
+        html.append("            text-align: center;\n");
+        html.append("        }\n");
+        html.append("        .toggle-button {\n");
+        html.append("            display: inline-block;\n");
+        html.append("            padding: 12px 24px;\n");
+        html.append("            font-size: 1em;\n");
+        html.append("            font-weight: 600;\n");
+        html.append("            color: white;\n");
+        html.append("            background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);\n");
+        html.append("            border: none;\n");
+        html.append("            border-radius: 8px;\n");
+        html.append("            cursor: pointer;\n");
+        html.append("            transition: transform 0.2s, box-shadow 0.2s;\n");
+        html.append("        }\n");
+        html.append("        .toggle-button:hover {\n");
+        html.append("            transform: translateY(-2px);\n");
+        html.append("            box-shadow: 0 8px 16px rgba(72, 187, 120, 0.3);\n");
+        html.append("        }\n");
+        html.append("        .toggle-button:active {\n");
+        html.append("            transform: translateY(0);\n");
         html.append("        }\n");
         html.append("        .field {\n");
-        html.append("            margin-bottom: 20px;\n");
+        html.append("            margin-bottom: 15px;\n");
+        html.append("            padding: 15px;\n");
+        html.append("            background: #f7fafc;\n");
+        html.append("            border-radius: 8px;\n");
+        html.append("            border-left: 4px solid #667eea;\n");
         html.append("        }\n");
         html.append("        .field-label {\n");
         html.append("            font-weight: 600;\n");
         html.append("            color: #4a5568;\n");
         html.append("            margin-bottom: 5px;\n");
-        html.append("            font-size: 0.95em;\n");
+        html.append("            font-size: 0.9em;\n");
         html.append("            text-transform: uppercase;\n");
         html.append("            letter-spacing: 0.5px;\n");
         html.append("        }\n");
         html.append("        .field-value {\n");
         html.append("            color: #2d3748;\n");
+        html.append("            font-size: 1.05em;\n");
         html.append("            line-height: 1.6;\n");
+        html.append("        }\n");
+        html.append("        .all-data {\n");
+        html.append("            display: none;\n");
+        html.append("            margin-top: 20px;\n");
+        html.append("            padding-top: 20px;\n");
+        html.append("            border-top: 2px dashed #cbd5e0;\n");
+        html.append("        }\n");
+        html.append("        .all-data.visible {\n");
+        html.append("            display: block;\n");
+        html.append("        }\n");
+        html.append("        .all-data-header {\n");
+        html.append("            font-size: 1.3em;\n");
+        html.append("            color: #2d3748;\n");
+        html.append("            margin-bottom: 15px;\n");
+        html.append("            font-weight: 600;\n");
+        html.append("        }\n");
+        html.append("        .back-link {\n");
+        html.append("            display: inline-block;\n");
+        html.append("            color: white;\n");
+        html.append("            text-decoration: none;\n");
+        html.append("            font-weight: 600;\n");
+        html.append("            padding: 10px 20px;\n");
+        html.append("            background: rgba(255,255,255,0.2);\n");
+        html.append("            border-radius: 8px;\n");
+        html.append("            transition: background 0.2s;\n");
+        html.append("            margin-bottom: 20px;\n");
+        html.append("        }\n");
+        html.append("        .back-link:hover {\n");
+        html.append("            background: rgba(255,255,255,0.3);\n");
         html.append("        }\n");
         html.append("        .no-results {\n");
         html.append("            text-align: center;\n");
         html.append("            padding: 60px 20px;\n");
-        html.append("            background: white;\n");
-        html.append("            border-radius: 12px;\n");
         html.append("        }\n");
-        html.append("        .no-results h2 { color: #4a5568; margin-bottom: 10px; }\n");
-        html.append("        .no-results p { color: #718096; }\n");
+        html.append("        .no-results h2 {\n");
+        html.append("            color: #2d3748;\n");
+        html.append("            font-size: 2em;\n");
+        html.append("            margin-bottom: 15px;\n");
+        html.append("        }\n");
+        html.append("        .no-results p {\n");
+        html.append("            color: #718096;\n");
+        html.append("            font-size: 1.1em;\n");
+        html.append("        }\n");
         html.append("        .multiple-results {\n");
-        html.append("            background: white;\n");
-        html.append("            border-radius: 12px;\n");
-        html.append("            padding: 30px;\n");
+        html.append("            padding: 20px;\n");
         html.append("        }\n");
         html.append("        .result-link {\n");
         html.append("            display: block;\n");
-        html.append("            padding: 15px 20px;\n");
-        html.append("            margin-bottom: 10px;\n");
+        html.append("            padding: 18px 24px;\n");
+        html.append("            margin-bottom: 12px;\n");
         html.append("            background: #f7fafc;\n");
-        html.append("            border-radius: 8px;\n");
         html.append("            color: #2d3748;\n");
         html.append("            text-decoration: none;\n");
-        html.append("            transition: all 0.2s;\n");
+        html.append("            border-radius: 10px;\n");
         html.append("            border-left: 4px solid #667eea;\n");
+        html.append("            font-weight: 500;\n");
+        html.append("            font-size: 1.1em;\n");
+        html.append("            transition: all 0.2s;\n");
         html.append("        }\n");
         html.append("        .result-link:hover {\n");
         html.append("            background: #edf2f7;\n");
@@ -339,6 +393,7 @@ public class CountrySearchServer {
             html.append("        <div class='country-card'>\n");
             html.append("            <h2 class='country-name'>").append(escapeHtml(country.getOrDefault("Country", "Unknown"))).append("</h2>\n");
             
+            // Display main fields
             for (Map.Entry<String, String> field : DISPLAY_FIELDS.entrySet()) {
                 if (field.getKey().equals("Country")) continue;
                 String value = country.getOrDefault(field.getKey(), "").trim();
@@ -350,7 +405,48 @@ public class CountrySearchServer {
                 }
             }
             
+            // Toggle button
+            html.append("            <div class='toggle-container'>\n");
+            html.append("                <button class='toggle-button' onclick='toggleAllData()' id='toggleBtn'>📋 Show All Data</button>\n");
+            html.append("            </div>\n");
+            
+            // All additional data (hidden by default)
+            html.append("            <div class='all-data' id='allData'>\n");
+            html.append("                <div class='all-data-header'>📊 Complete Database Information</div>\n");
+            
+            // Display ALL fields from CSV
+            for (Map.Entry<String, String> entry : country.entrySet()) {
+                // Skip fields already shown in main display
+                if (DISPLAY_FIELDS.containsKey(entry.getKey())) continue;
+                
+                String value = entry.getValue().trim();
+                if (!value.isEmpty()) {
+                    html.append("                <div class='field'>\n");
+                    html.append("                    <div class='field-label'>").append(escapeHtml(entry.getKey())).append("</div>\n");
+                    html.append("                    <div class='field-value'>").append(escapeHtml(value)).append("</div>\n");
+                    html.append("                </div>\n");
+                }
+            }
+            
+            html.append("            </div>\n");
             html.append("        </div>\n");
+            
+            // JavaScript for toggle
+            html.append("    <script>\n");
+            html.append("        function toggleAllData() {\n");
+            html.append("            const allData = document.getElementById('allData');\n");
+            html.append("            const btn = document.getElementById('toggleBtn');\n");
+            html.append("            allData.classList.toggle('visible');\n");
+            html.append("            if (allData.classList.contains('visible')) {\n");
+            html.append("                btn.textContent = '📋 Hide All Data';\n");
+            html.append("                btn.style.background = 'linear-gradient(135deg, #f56565 0%, #e53e3e 100%)';\n");
+            html.append("            } else {\n");
+            html.append("                btn.textContent = '📋 Show All Data';\n");
+            html.append("                btn.style.background = 'linear-gradient(135deg, #48bb78 0%, #38a169 100%)';\n");
+            html.append("            }\n");
+            html.append("        }\n");
+            html.append("    </script>\n");
+            
         } else {
             // Multiple results - show list
             html.append("        <div class='multiple-results'>\n");
