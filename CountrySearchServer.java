@@ -240,7 +240,7 @@ public class CountrySearchServer {
         html.append("    <style>\n");
         html.append("        * { margin: 0; padding: 0; box-sizing: border-box; }\n");
         html.append("        body {\n");
-        html.append("            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;\n");
+        html.append("            font-family: ui-serif, 'Charter', 'Bitstream Charter', Georgia, Cambria, 'Times New Roman', Times, serif;\n");
         html.append("            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\n");
         html.append("            min-height: 100vh;\n");
         html.append("            padding: 40px 20px;\n");
@@ -379,7 +379,7 @@ public class CountrySearchServer {
         html.append("</head>\n");
         html.append("<body>\n");
         html.append("    <div class='header'>\n");
-        html.append("        <a href='/' class='back-link'>← Back to Search</a>\n");
+        html.append("        <a href='/' class='back-link'>Back to Search</a>\n");
         html.append("        <h1>Search Results</h1>\n");
         html.append("        <p class='subtitle'>Query: \"").append(escapeHtml(query)).append("\"</p>\n");
         html.append("    </div>\n");
@@ -387,7 +387,7 @@ public class CountrySearchServer {
         
         if (results.isEmpty()) {
             html.append("        <div class='no-results'>\n");
-            html.append("            <h2>No countries found</h2>\n");
+            html.append("            <h2>No countries found...</h2>\n");
             html.append("            <p>Try searching for \"United States\", \"Germany\", or \"Japan\"</p>\n");
             html.append("        </div>\n");
         } else if (results.size() == 1) {
