@@ -169,6 +169,7 @@ public class CountrySearchServer {
             "            border: 2px solid #e2e8f0;\n" +
             "            border-radius: 12px;\n" +
             "            outline: none;\n" +
+            "            margin-bottom: 20px;\n" +
             "            transition: all 0.3s;\n" +
             "        }\n" +
             "        input[type='text']:focus {\n" +
