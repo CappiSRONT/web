@@ -131,7 +131,7 @@ public class CountrySearchServer {
             "        * { margin: 0; padding: 0; box-sizing: border-box; }\n" +
             "        body {\n" +
             "            font-family: ui-serif, 'Charter', 'Bitstream Charter', Georgia, Cambria, 'Times New Roman', Times, serif;\n" +
-            "            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\n" +
+            "            background: linear-gradient(135deg, #1e1e1e 0%, #ababab 100%);\n" +
             "            min-height: 100vh;\n" +
             "            display: flex;\n" +
             "            align-items: center;\n" +
@@ -265,10 +265,10 @@ public class CountrySearchServer {
         html.append("        }\n");
         html.append("        .country-name {\n");
         html.append("            font-size: 2em;\n");
-        html.append("            color: #2d3748;\n");
+        html.append("            color: #373737;\n");
         html.append("            margin-bottom: 20px;\n");
         html.append("            padding-bottom: 15px;\n");
-        html.append("            border-bottom: 3px solid #667eea;\n");
+        html.append("            border-bottom: 3px solid #4c4c4c;\n");
         html.append("        }\n");
         html.append("        .toggle-container {\n");
         html.append("            margin: 20px 0;\n");
