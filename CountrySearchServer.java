@@ -130,7 +130,7 @@ public class CountrySearchServer {
             "    <style>\n" +
             "        * { margin: 0; padding: 0; box-sizing: border-box; }\n" +
             "        body {\n" +
-            "            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;\n" +
+            "            font-family: ui-serif, 'Charter', 'Bitstream Charter', Georgia, Cambria, 'Times New Roman', Times, serif;\n" +
             "            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\n" +
             "            min-height: 100vh;\n" +
             "            display: flex;\n" +
@@ -211,9 +211,9 @@ public class CountrySearchServer {
             "<body>\n" +
             "    <div class='container'>\n" +
             "        <div class='globe'>🌍</div>\n" +
-            "        <h1>Country Search</h1>\n" +
-            "        <p class='subtitle'>Explore detailed information about any country</p>\n" +
-            "        <form action='/search' method='GET' class='search-box'>\n" +
+            "        <h1>The World FootBook</h1>\n" +
+            "        <p class='subtitle'>Explore detailed information about any country, from Italy to Canada.</p>\n" +
+            "        <form action='/search' method='GET' class='search-box'>\n\n" +
             "            <input type='text' name='q' placeholder='Enter country name...' required autofocus>\n" +
             "            <button type='submit'>Search</button>\n" +
             "        </form>\n" +
