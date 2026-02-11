@@ -160,7 +160,7 @@ public class CountrySearchServer {
             "        .search-box {\n" +
             "            position: relative;\n" +
             "            margin-top: 30px;\n" +
-            "            margin-bottom: 30px;\n" +
+            "            margin-bottom: 90px;\n" +
             "        }\n" +
             "        input[type='text'] {\n" +
             "            width: 100%;\n" +
