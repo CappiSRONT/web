@@ -366,7 +366,7 @@ public class CountrySearchServer {
         html.append("            color: #404040;\n");
         html.append("            text-decoration: none;\n");
         html.append("            border-radius: 10px;\n");
-        html.append("            border-left: 4px solid #404040;\n");
+        html.append("            border-left: 4px solid #989898;\n");
         html.append("            font-weight: 500;\n");
         html.append("            font-size: 1.1em;\n");
         html.append("            transition: all 0.2s;\n");
