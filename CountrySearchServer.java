@@ -175,7 +175,7 @@ public class CountrySearchServer {
             "        input[type='text']:focus {\n" +
             "            border-color: #a3a3a3;\n" +
             "            margin-top: 30px;\n" +
-            "            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);\n" +
+            "            box-shadow: 0 0 0 3px rgba(230, 230, 230, 0.1);\n" +
             "        }\n" +
             "        button {\n" +
             "            width: 100%;\n" +
@@ -191,7 +191,7 @@ public class CountrySearchServer {
             "        }\n" +
             "        button:hover {\n" +
             "            transform: translateY(-2px);\n" +
-            "            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);\n" +
+            "            box-shadow: 0 10px 20px rgba(123, 123, 123, 0.3);\n" +
             "        }\n" +
             "        button:active {\n" +
             "            transform: translateY(0);\n" +
@@ -317,7 +317,7 @@ public class CountrySearchServer {
         html.append("            display: none;\n");
         html.append("            margin-top: 20px;\n");
         html.append("            padding-top: 20px;\n");
-        html.append("            border-top: 2px dashed #cbd5e0;\n");
+        html.append("            border-top: 2px dashed #e1e1e1;\n");
         html.append("        }\n");
         html.append("        .all-data.visible {\n");
         html.append("            display: block;\n");
@@ -366,7 +366,7 @@ public class CountrySearchServer {
         html.append("            color: #404040;\n");
         html.append("            text-decoration: none;\n");
         html.append("            border-radius: 10px;\n");
-        html.append("            border-left: 4px solid #667eea;\n");
+        html.append("            border-left: 4px solid #ebebeb;\n");
         html.append("            font-weight: 500;\n");
         html.append("            font-size: 1.1em;\n");
         html.append("            transition: all 0.2s;\n");
