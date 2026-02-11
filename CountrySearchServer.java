@@ -185,6 +185,7 @@ public class CountrySearchServer {
             "            border: none;\n" +
             "            border-radius: 12px;\n" +
             "            cursor: pointer;\n" +
+            "            margin-bottom: 25px;\n" +
             "            transition: transform 0.2s, box-shadow 0.2s;\n" +
             "        }\n" +
             "        button:hover {\n" +
