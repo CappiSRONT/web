@@ -2,7 +2,7 @@
 nixPkgs = ["jdk17"]
 
 [phases.build]
-cmds = ["javac CountrySearchServer.java"]
+cmds = ["javac -encoding UTF-8 CountrySearchServer.java"]
 
 [phases.start]
 cmd = "java CountrySearchServer"
