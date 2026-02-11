@@ -352,7 +352,7 @@ public class CountrySearchServer {
         html.append("            margin-bottom: 15px;\n");
         html.append("        }\n");
         html.append("        .no-results p {\n");
-        html.append("            color: #718096;\n");
+        html.append("            color: #989898;\n");
         html.append("            font-size: 1.1em;\n");
         html.append("        }\n");
         html.append("        .multiple-results {\n");
