@@ -472,11 +472,10 @@ public class CountrySearchServer {
                     html.append("                <div class='field'>\n");
                     html.append("                    <div class='field-label'>").append(escapeHtml(entry.getKey())).append("</div>\n");
                     html.append("                    <div class='field-value'>").append(escapeHtml(value)).append("</div>\n");
-                    html.append("                    <p class='warning'>Try searching: United States, Germany, Japan, Brazil; Or use abreviation like, ger, united, or braz.</p>\n");
                     html.append("                </div>\n");
                 }
             }
-            
+            html.append("            <p class='warning'>Try searching: United States, Germany, Japan, Brazil; Or use abreviation like, ger, united, or braz.</p>\n");
             html.append("            </div>\n");
             html.append("        </div>\n");
             
