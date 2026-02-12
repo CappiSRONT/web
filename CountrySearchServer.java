@@ -443,11 +443,11 @@ public class CountrySearchServer {
             html.append("            if (allData.classList.contains('visible')) {\n");
             html.append("                btn.textContent = 'Hide All Data';\n");
             html.append("                btn.style.background = 'linear-gradient(135deg, #f56565 0%, #ac1010 100%)';\n");
-            html.append("                btn.style.box-shadow = '0 8px 16px rgba(200, 1, 57, 0.3)';\n");
+            html.append("                btn.style.boxShadow = '0 8px 16px rgba(200, 1, 57, 0.3)';\n");
             html.append("            } else {\n");
             html.append("                btn.textContent = 'Show All Data';\n");
             html.append("                btn.style.background = 'linear-gradient(135deg, #48bb78 0%, #38a169 100%)';\n");
-            html.append("                btn.style.box-shadow = '0 8px 16px rgba(72, 187, 120, 0.3)';\n");
+            html.append("                btn.style.boxShadow = '0 8px 16px rgba(72, 187, 120, 0.3)';\n");
             html.append("            }\n");
             html.append("        }\n");
             html.append("    </script>\n");
