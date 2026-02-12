@@ -227,7 +227,7 @@ public class CountrySearchServer {
             "        </form>\n" +
             "        <p class='info'>Try searching: United States, Germany, Japan, Brazil; Or use abreviation like, ger, united, or braz.</p>\n" +
             "        <p class='info' style='margin-top: 10px;'>" + countries.size() + " countries current publicly loaded.</p>\n" +
-            "        <p class='claus' style='margin-top: 8.5px;'>Countries current publicly loaded.</p>\n" +
+            "        <p class='claus' style='margin-top: 9px;'>Countries current publicly loaded.</p>\n" +
             "    </div>\n" +
             "</body>\n" +
             "</html>";
