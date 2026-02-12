@@ -54,6 +54,7 @@ public class CountrySearchServer {
         server.createContext("/", new HomeHandler());
         server.createContext("/search", new SearchHandler());
         server.createContext("/api/search", new APISearchHandler());
+        server.createContext("/favicon.gif", new FaviconHandler());  // ✅ FAVICON HANDLER ADDED
         
         server.setExecutor(null);
         server.start();
@@ -122,12 +123,35 @@ public class CountrySearchServer {
         }
     }
 
+    // ✅ NEW FAVICON HANDLER
+    static class FaviconHandler implements HttpHandler {
+        public void handle(HttpExchange exchange) throws IOException {
+            try {
+                byte[] favicon = Files.readAllBytes(Path.of("favicon.gif"));
+                
+                exchange.getResponseHeaders().set("Content-Type", "image/gif");
+                exchange.sendResponseHeaders(200, favicon.length);
+                OutputStream os = exchange.getResponseBody();
+                os.write(favicon);
+                os.close();
+            } catch (IOException e) {
+                // If favicon.gif not found, send 404
+                String response = "Favicon not found";
+                exchange.sendResponseHeaders(404, response.length());
+                OutputStream os = exchange.getResponseBody();
+                os.write(response.getBytes());
+                os.close();
+            }
+        }
+    }
+
     private static String getHomePage() {
         return "<!DOCTYPE html>\n" +
             "<html lang='en'>\n" +
             "<head>\n" +
             "    <meta charset='UTF-8'>\n" +
             "    <meta name='viewport' content='width=device-width, initial-scale=1.0'>\n" +
+            "    <link rel='icon' href='/favicon.gif' type='image/gif'>\n" +  // ✅ FAVICON LINK ADDED
             "    <title>The World FootBook</title>\n" +
             "    <style>\n" +
             "        * { margin: 0; padding: 0; box-sizing: border-box; }\n" +
@@ -212,7 +236,7 @@ public class CountrySearchServer {
             "        }\n" +
             "        .claus {\n" +
             "            color: #000000;\n" +
-            "            font-size: 0.75em;\n" +
+            "            font-size: 0.60em;\n" +
             "        }\n" +  
             "    </style>\n" +
             "</head>\n" +
@@ -227,7 +251,7 @@ public class CountrySearchServer {
             "        </form>\n" +
             "        <p class='info'>Try searching: United States, Germany, Japan, Brazil; Or use abreviation like, ger, united, or braz.</p>\n" +
             "        <p class='info' style='margin-top: 10px;'>" + countries.size() + " countries current publicly loaded.</p>\n" +
-            "        <p class='claus' style='margin-top: 3px;'>Countries current publicly loaded.</p>\n" +
+            "        <p class='claus' style='margin-top: 3px;'>All information is sourced from the Central Intelligence Agency.</p>\n" +
             "    </div>\n" +
             "</body>\n" +
             "</html>";
@@ -242,6 +266,7 @@ public class CountrySearchServer {
         html.append("<head>\n");
         html.append("    <meta charset='UTF-8'>\n");
         html.append("    <meta name='viewport' content='width=device-width, initial-scale=1.0'>\n");
+        html.append("    <link rel='icon' href='/favicon.gif' type='image/gif'>\n");  // ✅ FAVICON LINK ADDED
         html.append("    <title>The World FootBook - ").append(escapeHtml(query)).append("</title>\n");
         html.append("    <style>\n");
         html.append("        * { margin: 0; padding: 0; box-sizing: border-box; }\n");
