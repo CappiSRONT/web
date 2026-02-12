@@ -227,7 +227,7 @@ public class CountrySearchServer {
             "        </form>\n" +
             "        <p class='info'>Try searching: United States, Germany, Japan, Brazil; Or use abreviation like, ger, united, or braz.</p>\n" +
             "        <p class='info' style='margin-top: 10px;'>" + countries.size() + " countries current publicly loaded.</p>\n" +
-            "        <p class='claus' style='margin-top: 3px;'>All information is sourced from the Central Intelligence Agency. Current Web Version:0.0.43</p>\n" +
+            "        <p class='claus' style='margin-top: 3px;'>All information is sourced from the Central Intelligence Agency.\nCurrent Web Version:0.0.43\nOriginal Creator - A-Palmer</p>\n" +
             "    </div>\n" +
             "    <script>\n" +
             "        const canvas = document.createElement('canvas');\n" +
