@@ -432,9 +432,9 @@ public class CountrySearchServer {
             String longName = country.getOrDefault("Government: Country name - conventional long form", "");
             String displayName = shortName;
             if (!longName.isEmpty() && !longName.equals(shortName)) {
-                displayName = shortName + " (" + longName + ")";
+                //displayName = shortName + " (" + longName + ")";
             }        
-            //displayName = shortName;
+            displayName = shortName;
             html.append("<h2 class='country-name'>").append(escapeHtml(displayName)).append("</h2>\n");
             // Display main fields
             for (Map.Entry<String, String> field : DISPLAY_FIELDS.entrySet()) {
