@@ -136,7 +136,7 @@ public class CountrySearchServer {
             "            display: flex;\n" +
             "            align-items: center;\n" +
             "            justify-content: center;\n" +
-            "            padding: 20px;\n" +
+            "            padding: 5px;\n" +
             "        }\n" +
             "        .container {\n" +
             "            background: white;\n" +
