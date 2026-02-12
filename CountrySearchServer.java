@@ -54,7 +54,6 @@ public class CountrySearchServer {
         server.createContext("/", new HomeHandler());
         server.createContext("/search", new SearchHandler());
         server.createContext("/api/search", new APISearchHandler());
-        server.createContext("/favicon.gif", new FaviconHandler());  // ✅ FAVICON HANDLER ADDED
         
         server.setExecutor(null);
         server.start();
@@ -123,35 +122,12 @@ public class CountrySearchServer {
         }
     }
 
-    // ✅ NEW FAVICON HANDLER
-    static class FaviconHandler implements HttpHandler {
-        public void handle(HttpExchange exchange) throws IOException {
-            try {
-                byte[] favicon = Files.readAllBytes(Path.of("favicon.gif"));
-                
-                exchange.getResponseHeaders().set("Content-Type", "image/gif");
-                exchange.sendResponseHeaders(200, favicon.length);
-                OutputStream os = exchange.getResponseBody();
-                os.write(favicon);
-                os.close();
-            } catch (IOException e) {
-                // If favicon.gif not found, send 404
-                String response = "Favicon not found";
-                exchange.sendResponseHeaders(404, response.length());
-                OutputStream os = exchange.getResponseBody();
-                os.write(response.getBytes());
-                os.close();
-            }
-        }
-    }
-
     private static String getHomePage() {
         return "<!DOCTYPE html>\n" +
             "<html lang='en'>\n" +
             "<head>\n" +
             "    <meta charset='UTF-8'>\n" +
             "    <meta name='viewport' content='width=device-width, initial-scale=1.0'>\n" +
-            "    <link rel='icon' href='/favicon.gif' type='image/gif'>\n" +  // ✅ FAVICON LINK ADDED
             "    <title>The World FootBook</title>\n" +
             "    <style>\n" +
             "        * { margin: 0; padding: 0; box-sizing: border-box; }\n" +
@@ -253,6 +229,33 @@ public class CountrySearchServer {
             "        <p class='info' style='margin-top: 10px;'>" + countries.size() + " countries current publicly loaded.</p>\n" +
             "        <p class='claus' style='margin-top: 3px;'>All information is sourced from the Central Intelligence Agency.</p>\n" +
             "    </div>\n" +
+            "    <script>\n" +
+            "        const canvas = document.createElement('canvas');\n" +
+            "        canvas.width = 64;\n" +
+            "        canvas.height = 64;\n" +
+            "        const ctx = canvas.getContext('2d');\n" +
+            "        const globes = ['🌍', '🌎', '🌏'];\n" +
+            "        let frame = 0;\n" +
+            "        \n" +
+            "        function updateFavicon() {\n" +
+            "            ctx.clearRect(0, 0, 64, 64);\n" +
+            "            ctx.font = '56px Arial';\n" +
+            "            ctx.textAlign = 'center';\n" +
+            "            ctx.textBaseline = 'middle';\n" +
+            "            ctx.fillText(globes[frame % globes.length], 32, 36);\n" +
+            "            \n" +
+            "            const link = document.querySelector(\"link[rel*='icon']\") || document.createElement('link');\n" +
+            "            link.type = 'image/x-icon';\n" +
+            "            link.rel = 'shortcut icon';\n" +
+            "            link.href = canvas.toDataURL();\n" +
+            "            document.getElementsByTagName('head')[0].appendChild(link);\n" +
+            "            \n" +
+            "            frame++;\n" +
+            "        }\n" +
+            "        \n" +
+            "        setInterval(updateFavicon, 500);\n" +
+            "        updateFavicon();\n" +
+            "    </script>\n" +
             "</body>\n" +
             "</html>";
     }
@@ -266,7 +269,6 @@ public class CountrySearchServer {
         html.append("<head>\n");
         html.append("    <meta charset='UTF-8'>\n");
         html.append("    <meta name='viewport' content='width=device-width, initial-scale=1.0'>\n");
-        html.append("    <link rel='icon' href='/favicon.gif' type='image/gif'>\n");  // ✅ FAVICON LINK ADDED
         html.append("    <title>The World FootBook - ").append(escapeHtml(query)).append("</title>\n");
         html.append("    <style>\n");
         html.append("        * { margin: 0; padding: 0; box-sizing: border-box; }\n");
@@ -498,6 +500,33 @@ public class CountrySearchServer {
         }
         
         html.append("    </div>\n");
+        html.append("    <script>\n");
+        html.append("        const canvas = document.createElement('canvas');\n");
+        html.append("        canvas.width = 64;\n");
+        html.append("        canvas.height = 64;\n");
+        html.append("        const ctx = canvas.getContext('2d');\n");
+        html.append("        const globes = ['🌍', '🌎', '🌏'];\n");
+        html.append("        let frame = 0;\n");
+        html.append("        \n");
+        html.append("        function updateFavicon() {\n");
+        html.append("            ctx.clearRect(0, 0, 64, 64);\n");
+        html.append("            ctx.font = '56px Arial';\n");
+        html.append("            ctx.textAlign = 'center';\n");
+        html.append("            ctx.textBaseline = 'middle';\n");
+        html.append("            ctx.fillText(globes[frame % globes.length], 32, 36);\n");
+        html.append("            \n");
+        html.append("            const link = document.querySelector(\"link[rel*='icon']\") || document.createElement('link');\n");
+        html.append("            link.type = 'image/x-icon';\n");
+        html.append("            link.rel = 'shortcut icon';\n");
+        html.append("            link.href = canvas.toDataURL();\n");
+        html.append("            document.getElementsByTagName('head')[0].appendChild(link);\n");
+        html.append("            \n");
+        html.append("            frame++;\n");
+        html.append("        }\n");
+        html.append("        \n");
+        html.append("        setInterval(updateFavicon, 500);\n");
+        html.append("        updateFavicon();\n");
+        html.append("    </script>\n");
         html.append("</body>\n");
         html.append("</html>");
         
