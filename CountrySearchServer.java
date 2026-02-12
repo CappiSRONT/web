@@ -207,7 +207,7 @@ public class CountrySearchServer {
             "            50% { transform: translateY(-20px); }\n" +
             "        }\n" +
             "        .info {\n" +
-            "            color: #c7c7c7;\n" +
+            "            color: #949494;\n" +
             "            font-size: 0.95em;\n" +
             "        }\n" +
             "        .claus {\n" +
