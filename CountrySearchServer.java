@@ -137,7 +137,6 @@ public class CountrySearchServer {
             "            align-items: center;\n" +
             "            justify-content: center;\n" +
             "            padding: 15px;\n" +
-            "            border-radius: 10px;\n" +
             "        }\n" +
             "        .container {\n" +
             "            background: white;\n" +
@@ -200,7 +199,7 @@ public class CountrySearchServer {
             "        .globe {\n" +
             "            font-size: 4em;\n" +
             "            margin-bottom: 20px;\n" +
-            "            animation: float 3s ease-in-out infinite;\n" +
+            "            animation: float 4s ease-in-out infinite;\n" +
             "        }\n" +
             "        @keyframes float {\n" +
             "            0%, 100% { transform: translateY(0px); }\n" +
@@ -222,7 +221,7 @@ public class CountrySearchServer {
             "            <button type='submit'>Search</button>\n" +
             "        </form>\n" +
             "        <p class='info'>Try searching: United States, Germany, Japan, Brazil.</p>\n" +
-            "        <p class='info' style='margin-top: 10px;'>" + countries.size() + " countries loaded.</p>\n" +
+            "        <p class='info' style='margin-top: 10px;'>" + countries.size() + " countries current publicly loaded.</p>\n" +
             "    </div>\n" +
             "</body>\n" +
             "</html>";
@@ -444,9 +443,11 @@ public class CountrySearchServer {
             html.append("            if (allData.classList.contains('visible')) {\n");
             html.append("                btn.textContent = 'Hide All Data';\n");
             html.append("                btn.style.background = 'linear-gradient(135deg, #f56565 0%, #ac1010 100%)';\n");
+            html.append("                btn.style.box-shadow = 0 8px 16px rgba(200, 1, 57, 0.3);\n");
             html.append("            } else {\n");
             html.append("                btn.textContent = 'Show All Data';\n");
             html.append("                btn.style.background = 'linear-gradient(135deg, #48bb78 0%, #38a169 100%)';\n");
+            html.append("                btn.style.box-shadow = 0 8px 16px rgba(72, 187, 120, 0.3);\n");
             html.append("            }\n");
             html.append("        }\n");
             html.append("    </script>\n");
