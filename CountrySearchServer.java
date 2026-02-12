@@ -227,7 +227,7 @@ public class CountrySearchServer {
             "        </form>\n" +
             "        <p class='info'>Try searching: United States, Germany, Japan, Brazil; Or use abreviation like, ger, united, or braz.</p>\n" +
             "        <p class='info' style='margin-top: 10px;'>" + countries.size() + " countries current publicly loaded.</p>\n" +
-            "        <p class='claus' style='margin-top: 3px;'>All information is sourced from the Central Intelligence Agency.</p>\n" +
+            "        <p class='claus' style='margin-top: 3px;'>All information is sourced from the Central Intelligence Agency. Current Web Version:0.0.43</p>\n" +
             "    </div>\n" +
             "    <script>\n" +
             "        const canvas = document.createElement('canvas');\n" +
@@ -417,7 +417,8 @@ public class CountrySearchServer {
         html.append("        <p class='subtitle'>Country Searched: \"").append(escapeHtml(query)).append("\"</p>\n");
         html.append("    </div>\n");
         html.append("    <div class='container'>\n");
-        
+
+        // If there is no result 
         if (results.isEmpty()) {
             html.append("        <div class='no-results'>\n");
             html.append("            <h2>No countries found...</h2>\n");
@@ -427,8 +428,13 @@ public class CountrySearchServer {
             // Single result - show full details
             Map<String, String> country = results.get(0);
             html.append("        <div class='country-card'>\n");
-            html.append("            <h2 class='country-name'>").append(escapeHtml(country.getOrDefault("Country", "Unknown"))).append("</h2>\n");
-            
+            String shortName = country.getOrDefault("Country", "Unknown");
+            String longName = country.getOrDefault("Government: Country name - conventional long form", "");
+            String displayName = shortName;
+            if (!longName.isEmpty() && !longName.equals(shortName)) {
+                displayName = shortName + " (" + longName + ")";
+            }        
+            html.append("<h2 class='country-name'>").append(escapeHtml(displayName)).append("</h2>\n");
             // Display main fields
             for (Map.Entry<String, String> field : DISPLAY_FIELDS.entrySet()) {
                 if (field.getKey().equals("Country")) continue;
@@ -468,6 +474,7 @@ public class CountrySearchServer {
             html.append("        </div>\n");
             
             // JavaScript for toggle
+            // The acutal code for the toggle script
             html.append("    <script>\n");
             html.append("        function toggleAllData() {\n");
             html.append("            const allData = document.getElementById('allData');\n");
@@ -550,6 +557,7 @@ public class CountrySearchServer {
         return results;
     }
 
+    // Everything below this point is for the CVS and JSON files.
     private static String resultsToJSON(List<Map<String, String>> results) {
         StringBuilder json = new StringBuilder("[");
         for (int i = 0; i < results.size(); i++) {
