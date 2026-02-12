@@ -357,7 +357,7 @@ public class CountrySearchServer {
         html.append("        }\n");
         html.append("        .all-data-header {\n");
         html.append("            font-size: 1.3em;\n");
-        html.append("            color: #454545;\n");
+        html.append("            color: #000000;\n");
         html.append("            margin-bottom: 15px;\n");
         html.append("            font-weight: 600;\n");
         html.append("        }\n");
