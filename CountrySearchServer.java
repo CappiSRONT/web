@@ -66,10 +66,10 @@ public class CountrySearchServer {
     static class HomeHandler implements HttpHandler {
         public void handle(HttpExchange exchange) throws IOException {
             String html = getHomePage();
-            exchange.getResponseHeaders().set("Content-Type", "text/html; charset=UTF-8");
-            exchange.sendResponseHeaders(200, html.getBytes().length);
+            byte[] bytes = html.getBytes(java.nio.charset.StandardCharsets.UTF_8);
+            exchange.sendResponseHeaders(200, bytes.length);
             OutputStream os = exchange.getResponseBody();
-            os.write(html.getBytes());
+            os.write(bytes);
             os.close();
         }
     }
@@ -82,16 +82,17 @@ public class CountrySearchServer {
                 for (String param : params) {
                     String[] kv = param.split("=");
                     if (kv[0].equals("q")) {
-                        query = URLDecoder.decode(kv[1], "UTF-8");
-                    }
+                    query = URLDecoder.decode(kv[1], "UTF-8");
+                    }    
                 }
             }
 
             String html = getSearchResultsPage(query);
             exchange.getResponseHeaders().set("Content-Type", "text/html; charset=UTF-8");
-            exchange.sendResponseHeaders(200, html.getBytes().length);
+            byte[] bytes = html.getBytes(java.nio.charset.StandardCharsets.UTF_8);
+            exchange.sendResponseHeaders(200, bytes.length);
             OutputStream os = exchange.getResponseBody();
-            os.write(html.getBytes());
+            os.write(bytes);
             os.close();
         }
     }
@@ -108,14 +109,15 @@ public class CountrySearchServer {
                     }
                 }
             }
-
+    
             List<Map<String, String>> results = searchCountry(query);
             String json = resultsToJSON(results);
-            
-            exchange.getResponseHeaders().set("Content-Type", "application/json");
-            exchange.sendResponseHeaders(200, json.getBytes().length);
+        
+            exchange.getResponseHeaders().set("Content-Type", "application/json; charset=UTF-8");
+            byte[] bytes = json.getBytes(java.nio.charset.StandardCharsets.UTF_8);
+            exchange.sendResponseHeaders(200, bytes.length);
             OutputStream os = exchange.getResponseBody();
-            os.write(json.getBytes());
+            os.write(bytes);
             os.close();
         }
     }
@@ -215,12 +217,12 @@ public class CountrySearchServer {
             "    <div class='container'>\n" +
             "        <div class='globe'>?</div>\n" +
             "        <h1>The World FootBook</h1>\n" +
-            "        <p class='subtitle'>Explore detailed information about any country, from Italy to Canada.</p>\n" +
+            "        <p class='subtitle'>Explore detailed information about any country, from Italy to Canada; Using backed information from the CIA.</p>\n" +
             "        <form action='/search' method='GET' class='search-box'>\n\n" +
             "            <input type='text' name='q' placeholder='Enter country name...' required autofocus>\n" +
             "            <button type='submit'>Search</button>\n" +
             "        </form>\n" +
-            "        <p class='info'>Try searching: United States, Germany, Japan, Brazil.</p>\n" +
+            "        <p class='info'>Try searching: United States, Germany, Japan, Brazil; Or use abreviation like, ger, united, or braz.</p>\n" +
             "        <p class='info' style='margin-top: 10px;'>" + countries.size() + " countries current publicly loaded.</p>\n" +
             "    </div>\n" +
             "</body>\n" +
@@ -526,7 +528,7 @@ public class CountrySearchServer {
     }
 
     private static void loadCSV(String path) throws IOException {
-        String content = Files.readString(Path.of(path));
+        String content = Files.readString(Path.of(path), java.nio.charset.StandardCharsets.UTF_8);
         
         List<String> rawLines = new ArrayList<>();
         StringBuilder current = new StringBuilder();
