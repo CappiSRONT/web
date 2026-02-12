@@ -133,10 +133,11 @@ public class CountrySearchServer {
             "            font-family: ui-serif, 'Charter', 'Bitstream Charter', Georgia, Cambria, 'Times New Roman', Times, serif;\n" +
             "            background: linear-gradient(135deg, #1e1e1e 0%, #ababab 100%);\n" +
             "            min-height: 100vh;\n" +
-            "            display: block;\n" +
+            "            display: flex;\n" +
             "            align-items: center;\n" +
             "            justify-content: center;\n" +
-            "            padding: 5px;\n" +
+            "            padding: 15px;\n" +
+            "            border-radius: 10px;\n" +
             "        }\n" +
             "        .container {\n" +
             "            background: white;\n" +
