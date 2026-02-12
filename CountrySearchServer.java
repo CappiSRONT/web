@@ -133,7 +133,7 @@ public class CountrySearchServer {
             "        * { margin: 0; padding: 0; box-sizing: border-box; }\n" +
             "        body {\n" +
             "            font-family: ui-serif, 'Charter', 'Bitstream Charter', Georgia, Cambria, 'Times New Roman', Times, serif;\n" +
-            "            background: linear-gradient(135deg, #1e1e1e 0%, #ababab 100%);\n" +
+            "            background: linear-gradient(450deg, #1e1e1e 35%, #ababab 100%);\n" +
             "            min-height: 100vh;\n" +
             "            display: flex;\n" +
             "            align-items: center;\n" +
@@ -304,7 +304,7 @@ public class CountrySearchServer {
         html.append("        }\n");
         html.append("        .field-label {\n");
         html.append("            font-weight: 600;\n");
-        html.append("            color: #626262;\n");
+        html.append("            color: #181818;\n");
         html.append("            margin-bottom: 5px;\n");
         html.append("            font-size: 0.9em;\n");
         html.append("            text-transform: uppercase;\n");
@@ -383,7 +383,7 @@ public class CountrySearchServer {
         html.append("    <div class='header'>\n");
         html.append("        <a href='/' class='back-link'>Back to Search</a>\n");
         html.append("        <h1>Search Results</h1>\n");
-        html.append("        <p class='subtitle'>Query: \"").append(escapeHtml(query)).append("\"</p>\n");
+        html.append("        <p class='subtitle'>Country Searched: \"").append(escapeHtml(query)).append("\"</p>\n");
         html.append("    </div>\n");
         html.append("    <div class='container'>\n");
         
