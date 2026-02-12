@@ -408,6 +408,11 @@ public class CountrySearchServer {
         html.append("            background: #edf2f7;\n");
         html.append("            transform: translateX(5px);\n");
         html.append("        }\n");
+        html.append("        .warning {\n");
+        html.append("            color: #000000;\n");
+        html.append("            font-size: 1.05em;\n");
+        html.append("            line-height: 1.6;\n");
+        html.append("        }\n");
         html.append("    </style>\n");
         html.append("</head>\n");
         html.append("<body>\n");
@@ -467,6 +472,7 @@ public class CountrySearchServer {
                     html.append("                <div class='field'>\n");
                     html.append("                    <div class='field-label'>").append(escapeHtml(entry.getKey())).append("</div>\n");
                     html.append("                    <div class='field-value'>").append(escapeHtml(value)).append("</div>\n");
+                    html.append("                    <p class='warning'>Try searching: United States, Germany, Japan, Brazil; Or use abreviation like, ger, united, or braz.</p>\n");
                     html.append("                </div>\n");
                 }
             }
