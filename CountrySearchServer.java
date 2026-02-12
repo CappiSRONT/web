@@ -298,7 +298,7 @@ public class CountrySearchServer {
         html.append("        }\n");
         html.append("        .country-name {\n");
         html.append("            font-size: 2em;\n");
-        html.append("            color: #373737;\n");
+        html.append("            color: #000000;\n");
         html.append("            margin-bottom: 20px;\n");
         html.append("            padding-bottom: 15px;\n");
         html.append("            border-bottom: 3px solid #4c4c4c;\n");
