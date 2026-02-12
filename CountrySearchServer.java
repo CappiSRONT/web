@@ -495,14 +495,19 @@ public class CountrySearchServer {
             
         } else {
             // Multiple results - show list
-            html.append("        <div class='multiple-results'>\n");
-            html.append("            <h2 style='margin-bottom: 20px;'>Found ").append(results.size()).append(" matches</h2>\n");
+            html.append("<div class='multiple-results'>\n");
+            html.append("<h2 style='margin-bottom: 20px;'>Found ").append(results.size()).append(" matches</h2>\n");
             for (Map<String, String> country : results) {
                 String name = country.getOrDefault("Country", "Unknown");
+                String longName = country.getOrDefault("Government: Country name - conventional long form", "");
+                String displayName = name;
+                if (!longName.isEmpty() && !longName.equals(name)) {
+                    displayName = name + " (" + longName + ")";
+                }
                 String encoded = URLEncoder.encode(name, java.nio.charset.StandardCharsets.UTF_8);
-                html.append("            <a href='/search?q=").append(encoded).append("' class='result-link'>\n");
-                html.append("                ").append(escapeHtml(name)).append("\n");
-                html.append("            </a>\n");
+                html.append("<a href='/search?q=").append(encoded).append("' class='result-link'>\n");
+                html.append("").append(escapeHtml(displayName)).append("\n");
+                html.append("</a>\n");
             }
             html.append("        </div>\n");
         }
