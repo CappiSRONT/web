@@ -443,7 +443,7 @@ public class CountrySearchServer {
             Map<String, String> country = results.get(0);
             html.append("<div class='country-card'>\n");
             String shortName = country.getOrDefault("Country", "Unknown");
-            String longName = country.getOrDefault("Government: Country name - conventional long form", "");
+            String longName = country.getOrDefault("Government: Country name: conventional long form", "");
             String displayName = shortName;
             if (!longName.isEmpty() && !longName.equals(shortName)) {
                 //displayName = shortName + " (" + longName + ")";
