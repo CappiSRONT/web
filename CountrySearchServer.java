@@ -513,7 +513,7 @@ public class CountrySearchServer {
             html.append("<h2 style='margin-bottom: 20px;'>Found ").append(results.size()).append(" matches</h2>\n");
             for (Map<String, String> country : results) {
                 String name = country.getOrDefault("Country", "Unknown");
-                String longName = country.getOrDefault("Government: Country name - conventional long form", "");
+                String longName = country.getOrDefault("Government: Country name: conventional long form", "");
                 String displayName = name;
                 if (!longName.isEmpty() && !longName.equals(name)) {
                     displayName = name + " (" + longName + ")";
