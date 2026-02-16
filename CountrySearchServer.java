@@ -228,7 +228,7 @@ public class CountrySearchServer {
             "<body>\n" +
             "    <div class='container'>\n" +
             "        <div class='globe'>?</div>\n" +
-            "        <h1>Natlas.org</h1>\n" +
+            "        <h1>National Atlas.org</h1>\n" +
             "        <p class='subtitle'>Explore detailed information about any country, from Italy to Canada; Using backed information from the CIA.</p>\n" +
             "        <form action='/search' method='GET' class='search-box'>\n\n" +
             "            <input type='text' name='q' placeholder='Enter country name...' required autofocus>\n" +
@@ -236,7 +236,7 @@ public class CountrySearchServer {
             "        </form>\n" +
             "        <p class='info'>Try searching: United States, Germany, Japan, Brazil; Or use abreviation like, ger, united, or braz.</p>\n" +
             "        <p class='info' style='margin-top: 10px;'>" + countries.size() + " countries current publicly loaded.</p>\n" +
-            "        <p class='claus' style='margin-top: 3px;'>All information is sourced from the Central Intelligence Agency.\nCurrent Web Version:0.0.43\nOriginal Creator - A-Palmer</p>\n" +
+            "        <p class='claus' style='margin-top: 3px;'>All information is sourced from the Central Intelligence Agency (2024) & Gerald Bauer (Jan 1st, 2026).\nCurrent Web Version:0.0.43\nOriginal Creator - A-Palmer</p>\n" +
             "    </div>\n" +
             "    <script>\n" +
             "        const canvas = document.createElement('canvas');\n" +
