@@ -13,30 +13,39 @@ public class CountrySearchServer {
 
     static {
         DISPLAY_FIELDS.put("Country", "Country");
-        DISPLAY_FIELDS.put("Government: Country name - conventional long form", "Official Name");
+    // CHANGED: now uses colon format
+        DISPLAY_FIELDS.put("Government: Country name: conventional long form", "Official Name");
         DISPLAY_FIELDS.put("Geography: Location", "Location");
-        DISPLAY_FIELDS.put("Geography: Area - total", "Total Area");
-        DISPLAY_FIELDS.put("People and Society: Population - total", "Population");
-        DISPLAY_FIELDS.put("Government: Capital - name", "Capital");
+    // CHANGED: colon instead of dash
+        DISPLAY_FIELDS.put("Geography: Area: total ", "Total Area");
+    // CHANGED: colon instead of dash
+        DISPLAY_FIELDS.put("People and Society: Population: total", "Population");
+    // CHANGED: colon instead of dash
+        DISPLAY_FIELDS.put("Government: Capital: name", "Capital");
         DISPLAY_FIELDS.put("Government: Government type", "Government Type");
         DISPLAY_FIELDS.put("People and Society: Languages", "Languages");
         DISPLAY_FIELDS.put("People and Society: Religions", "Religions");
-        DISPLAY_FIELDS.put("People and Society: Nationality - noun", "Nationality");
-        DISPLAY_FIELDS.put("People and Society: Life expectancy at birth - total population", "Life Expectancy");
-        DISPLAY_FIELDS.put("People and Society: Median age - total", "Median Age");
+    // CHANGED: colon instead of dash
+        DISPLAY_FIELDS.put("People and Society: Nationality: noun", "Nationality");
+    // CHANGED: colon instead of dash
+        DISPLAY_FIELDS.put("People and Society: Life expectancy at birth: total population", "Life Expectancy");
+    // CHANGED: colon instead of dash
+        DISPLAY_FIELDS.put("People and Society: Median age: total", "Median Age");
         DISPLAY_FIELDS.put("Geography: Climate", "Climate");
         DISPLAY_FIELDS.put("Geography: Natural resources", "Natural Resources");
         DISPLAY_FIELDS.put("Economy: Economic overview", "Economic Overview");
-        DISPLAY_FIELDS.put("Economy: Real GDP per capita", "GDP Per Capita");
+    // CHANGED: now shows most recent year
+        DISPLAY_FIELDS.put("Economy: Real GDP per capita: Real GDP per capita 2024", "GDP Per Capita");
         DISPLAY_FIELDS.put("Economy: Industries", "Industries");
         DISPLAY_FIELDS.put("Economy: Exports - partners", "Export Partners");
         DISPLAY_FIELDS.put("Economy: Imports - partners", "Import Partners");
         DISPLAY_FIELDS.put("Government: Independence", "Independence");
-        DISPLAY_FIELDS.put("Government: National anthem - name", "National Anthem");
+    // CHANGED: new format for anthem
+        DISPLAY_FIELDS.put("Government: National anthem(s): title", "National Anthem");
         DISPLAY_FIELDS.put("Government: Flag description", "Flag Description");
         DISPLAY_FIELDS.put("Military and Security: Military expenditures", "Military Expenditures");
         DISPLAY_FIELDS.put("Environment: Environment - current issues", "Environmental Issues");
-        DISPLAY_FIELDS.put("url", "CIA World Factbook URL");
+        // REMOVED: url - no longer in new CSV
     }
 
     public static void main(String[] args) throws Exception {
