@@ -128,7 +128,7 @@ public class CountrySearchServer {
             "<head>\n" +
             "    <meta charset='UTF-8'>\n" +
             "    <meta name='viewport' content='width=device-width, initial-scale=1.0'>\n" +
-            "    <title>GeoPedia</title>\n" +
+            "    <title>Natlas</title>\n" +
             "    <style>\n" +
             "        * { margin: 0; padding: 0; box-sizing: border-box; }\n" +
             "        body {\n" +
@@ -219,7 +219,7 @@ public class CountrySearchServer {
             "<body>\n" +
             "    <div class='container'>\n" +
             "        <div class='globe'>?</div>\n" +
-            "        <h1>GeoPedia</h1>\n" +
+            "        <h1>Natlas.org</h1>\n" +
             "        <p class='subtitle'>Explore detailed information about any country, from Italy to Canada; Using backed information from the CIA.</p>\n" +
             "        <form action='/search' method='GET' class='search-box'>\n\n" +
             "            <input type='text' name='q' placeholder='Enter country name...' required autofocus>\n" +
@@ -269,7 +269,7 @@ public class CountrySearchServer {
         html.append("<head>\n");
         html.append("    <meta charset='UTF-8'>\n");
         html.append("    <meta name='viewport' content='width=device-width, initial-scale=1.0'>\n");
-        html.append("    <title>GeoPedia - ").append(escapeHtml(query)).append("</title>\n");
+        html.append("    <title>Natlas - ").append(escapeHtml(query)).append("</title>\n");
         html.append("    <style>\n");
         html.append("        * { margin: 0; padding: 0; box-sizing: border-box; }\n");
         html.append("        body {\n");
