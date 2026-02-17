@@ -517,8 +517,12 @@ public class CountrySearchServer {
                 String name = country.getOrDefault("Country", "Unknown");
                 String longName = country.getOrDefault("Government: Country name: conventional long form", "");
                 String displayName = name;
-                if (!longName.isEmpty() && !longName.equals(name)) {
+                if (!longName.isEmpty() && !longName.equals(name) && !longName.equals("None")) {
                     displayName = name + " (" + longName + ")";
+                }
+                else
+                {
+                    displayName = name;
                 }
                 String encoded = URLEncoder.encode(name, java.nio.charset.StandardCharsets.UTF_8);
                 html.append("<a href='/search?q=").append(encoded).append("' class='result-link'>\n");
