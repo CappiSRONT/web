@@ -517,7 +517,7 @@ public class CountrySearchServer {
                 String name = country.getOrDefault("Country", "Unknown");
                 String longName = country.getOrDefault("Government: Country name: conventional long form", "");
                 String displayName = name;
-                if (!longName.isEmpty() && !longName.equals(name) && !longName.equals("None")) {
+                if (!longName.isEmpty() && !longName.equals(name) && !longName.equals("none")) {
                     displayName = name + " (" + longName + ")";
                 }
                 else
