@@ -78,6 +78,9 @@ public class CountrySearchServer {
         public void handle(HttpExchange exchange) throws IOException {
             String html = getHomePage();
             byte[] bytes = html.getBytes(java.nio.charset.StandardCharsets.UTF_8);
+            // Updated this to fix some crud
+            exchange.getResponseHeaders().set("Content-Security-Policy", 
+            "script-src 'self' 'unsafe-inline'");
             exchange.sendResponseHeaders(200, bytes.length);
             OutputStream os = exchange.getResponseBody();
             os.write(bytes);
@@ -97,7 +100,8 @@ public class CountrySearchServer {
                     }    
                 }
             }
-
+            exchange.getResponseHeaders().set("Content-Security-Policy", 
+            "script-src 'self' 'unsafe-inline'");
             String html = getSearchResultsPage(query);
             exchange.getResponseHeaders().set("Content-Type", "text/html; charset=UTF-8");
             byte[] bytes = html.getBytes(java.nio.charset.StandardCharsets.UTF_8);
@@ -123,7 +127,8 @@ public class CountrySearchServer {
     
             List<Map<String, String>> results = searchCountry(query);
             String json = resultsToJSON(results);
-        
+            exchange.getResponseHeaders().set("Content-Security-Policy", 
+            "script-src 'self' 'unsafe-inline'");
             exchange.getResponseHeaders().set("Content-Type", "application/json; charset=UTF-8");
             byte[] bytes = json.getBytes(java.nio.charset.StandardCharsets.UTF_8);
             exchange.sendResponseHeaders(200, bytes.length);
@@ -133,6 +138,7 @@ public class CountrySearchServer {
         }
     }
 
+    // The actual HTML Page
     private static String getHomePage() {
         return "<!DOCTYPE html>\n" +
             "<html lang='en'>\n" +
