@@ -572,7 +572,7 @@ public class CountrySearchServer {
 
         for (Map<String, String> row : countries) {
             String name = row.getOrDefault("Country", "").toLowerCase();
-            String longName = row.getOrDefault("Government: Country name - conventional long form", "").toLowerCase();
+            String longName = row.getOrDefault("Government: Country name: conventional long form", "").toLowerCase();
 
             if (name.equals(q) || longName.equals(q)) {
                 results.add(0, row);
