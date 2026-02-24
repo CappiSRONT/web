@@ -10,7 +10,9 @@ public class CountrySearchServer {
 
     private static List<String> headers = new ArrayList<>();
     private static List<Map<String, String>> countries = new ArrayList<>();
-
+    
+    private static final String CSP = "script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com";
+    
     private static final Map<String, String> DISPLAY_FIELDS = new LinkedHashMap<>();
 
     static {
@@ -79,8 +81,7 @@ public class CountrySearchServer {
             String html = getHomePage();
             byte[] bytes = html.getBytes(java.nio.charset.StandardCharsets.UTF_8);
             // Updated this to fix some crud
-            exchange.getResponseHeaders().set("Content-Security-Policy", 
-            "script-src 'self' 'unsafe-inline'");
+            exchange.getResponseHeaders().set("Content-Security-Policy", CSP);
             exchange.sendResponseHeaders(200, bytes.length);
             OutputStream os = exchange.getResponseBody();
             os.write(bytes);
@@ -100,8 +101,7 @@ public class CountrySearchServer {
                     }    
                 }
             }
-            exchange.getResponseHeaders().set("Content-Security-Policy", 
-            "script-src 'self' 'unsafe-inline'");
+            exchange.getResponseHeaders().set("Content-Security-Policy", CSP);
             String html = getSearchResultsPage(query);
             exchange.getResponseHeaders().set("Content-Type", "text/html; charset=UTF-8");
             byte[] bytes = html.getBytes(java.nio.charset.StandardCharsets.UTF_8);
@@ -127,8 +127,7 @@ public class CountrySearchServer {
     
             List<Map<String, String>> results = searchCountry(query);
             String json = resultsToJSON(results);
-            exchange.getResponseHeaders().set("Content-Security-Policy", 
-            "script-src 'self' 'unsafe-inline'");
+            exchange.getResponseHeaders().set("Content-Security-Policy", CSP);
             exchange.getResponseHeaders().set("Content-Type", "application/json; charset=UTF-8");
             byte[] bytes = json.getBytes(java.nio.charset.StandardCharsets.UTF_8);
             exchange.sendResponseHeaders(200, bytes.length);
