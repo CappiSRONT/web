@@ -573,20 +573,25 @@ public class CountrySearchServer {
     }
 
     private static List<Map<String, String>> searchCountry(String query) {
-        String q = query.toLowerCase().trim();
-        List<Map<String, String>> results = new ArrayList<>();
+    String q = query.toLowerCase().trim();
+    List<Map<String, String>> exactMatches = new ArrayList<>();
+    List<Map<String, String>> partialMatches = new ArrayList<>();
 
-        for (Map<String, String> row : countries) {
-            String name = row.getOrDefault("Country", "").toLowerCase();
-            String longName = row.getOrDefault("Government: Country name: conventional long form", "").toLowerCase();
+    for (Map<String, String> row : countries) {
+        String name = row.getOrDefault("Country", "").toLowerCase();
+        String longName = row.getOrDefault("Government: Country name: conventional long form", "").toLowerCase();
 
-            if (name.equals(q) || longName.equals(q)) {
-                results.add(0, row);
-            } else if (name.contains(q) || longName.contains(q)) {
-                results.add(row);
-            }
+        if (name.equals(q) || longName.equals(q)) {
+            exactMatches.add(row);
+        } else if (name.contains(q) || longName.contains(q)) {
+            partialMatches.add(row);
         }
-        return results;
+    }
+
+        // If we found an exact match, return only that — don't mix in partials
+    if (!exactMatches.isEmpty()) return exactMatches;
+    return partialMatches;
+        
     }
 
     // Everything below this point is for the CVS and JSON files.
