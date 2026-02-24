@@ -159,7 +159,7 @@ public class CountrySearchServer {
             "        }\n" +
             "        .container {\n" +
             "            background: white;\n" +
-            "            border-radius: 20px;\n" +
+            "            border-radius: 12px;\n" +
             "            box-shadow: 0 20px 60px rgba(0,0,0,0.3);\n" +
             "            padding: 60px 40px;\n" +
             "            max-width: 600px;\n" +
