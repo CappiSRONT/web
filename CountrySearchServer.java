@@ -462,13 +462,6 @@ public class CountrySearchServer {
                 if (field.getKey().equals("Country")) continue;
                 String value = country.getOrDefault(field.getKey(), "").trim();
                 if (!value.isEmpty()) {
-                    if (field.getValue().Equals("Official Name"))
-                    {
-                        if (field.getValue() == "None")
-                        {
-                            
-                        }
-                    }
                     html.append("            <div class='field'>\n");
                     html.append("                <div class='field-label'>").append(escapeHtml(field.getValue())).append("</div>\n");
                     html.append("                <div class='field-value'>").append(escapeHtml(value)).append("</div>\n");
