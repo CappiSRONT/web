@@ -435,7 +435,7 @@ public class CountrySearchServer {
         html.append("    <div class='header'>\n");
         html.append("        <a href='/' class='back-link'>Back to Search</a>\n");
         html.append("        <h1>Search Results</h1>\n");
-        html.append("        <p class='subtitle'>Country Searched: \"").append(escapeHtml(query)).append("\"</p>\n");
+        html.append("        <p class='subtitle'>Alias Searched: \"").append(escapeHtml(query)).append("\"</p>\n");
         html.append("    </div>\n");
         html.append("    <div class='container'>\n");
 
