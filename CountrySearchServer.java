@@ -462,6 +462,13 @@ public class CountrySearchServer {
                 if (field.getKey().equals("Country")) continue;
                 String value = country.getOrDefault(field.getKey(), "").trim();
                 if (!value.isEmpty()) {
+                    if (field.getValue().Equals("Official Name"))
+                    {
+                        if (field.getValue() == "None")
+                        {
+                            
+                        }
+                    }
                     html.append("            <div class='field'>\n");
                     html.append("                <div class='field-label'>").append(escapeHtml(field.getValue())).append("</div>\n");
                     html.append("                <div class='field-value'>").append(escapeHtml(value)).append("</div>\n");
@@ -491,7 +498,7 @@ public class CountrySearchServer {
                     html.append("                </div>\n");
                 }
             }
-            html.append('            <p class="warning">Warning: Some information might be outdated or incorrect, please check statistics before using(most of the economical stats are correct, its mostly the Population stats that are incorrect). Some dates are listed but some are missed, if you have any issues please report it to the Github at <a href="https://github.com/CappiSRONT/web/issues" target="_blank">github.com</a>.</p>\n');
+            html.append("            <p class=\"warning\">Warning: Some information might be outdated or incorrect, please check statistics before using(most of the economical stats are correct, its mostly the Population stats that are incorrect). Some dates are listed but some are missed, if you have any issues please report it to the Github at <a href=\"https://github.com/CappiSRONT/web/issues\" target=\"_blank\">github.com</a>.</p>\n");
             html.append("            </div>\n");
             html.append("        </div>\n");
             
