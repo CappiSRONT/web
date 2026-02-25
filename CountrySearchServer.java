@@ -491,7 +491,7 @@ public class CountrySearchServer {
                     html.append("                </div>\n");
                 }
             }
-            html.append("            <p class='warning'>Warning: Some information might be outdated or incorrect, please check statistics before using(most of the economical stats are correct, its mostly the Population stats that are incorrect). Some dates are listed but some are missed, if you have any issues please report it to the Github at<a href="https://github.com/CappiSRONT/web/issues" target="_blank">github.com</a>.</p>\n");
+            html.append('            <p class="warning">Warning: Some information might be outdated or incorrect, please check statistics before using(most of the economical stats are correct, its mostly the Population stats that are incorrect). Some dates are listed but some are missed, if you have any issues please report it to the Github at <a href="https://github.com/CappiSRONT/web/issues" target="_blank">github.com</a>.</p>\n');
             html.append("            </div>\n");
             html.append("        </div>\n");
             
