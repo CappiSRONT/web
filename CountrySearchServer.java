@@ -236,7 +236,7 @@ public class CountrySearchServer {
             "    <div class='container'>\n" +
             "        <div class='globe'>?</div>\n" +
             "        <h1>National Atlas</h1>\n" +
-            "        <p class='subtitle'>Explore detailed information about any country, from Italy to Canada; Using backed information from the CIA.</p>\n" +
+            "        <p class='subtitle'>Explore detailed information about any country, region, or territory, from Italy to Canada; Using backed information from the CIA.</p>\n" +
             "        <form action='/search' method='GET' class='search-box'>\n\n" +
             "            <input type='text' name='q' placeholder='Enter country name...' required autofocus>\n" +
             "            <button type='submit'>Search</button>\n" +
