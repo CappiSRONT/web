@@ -477,7 +477,7 @@ public class CountrySearchServer {
                     }
                     else
                     {
-                        System.out.println("Found country name that does not have a null value: " + field.getValue());
+                        System.out.println("Found country name that does not have a null value: " + value.getValue());
                         html.append("            <div class='field'>\n");
                         html.append("                <div class='field-label'>").append(escapeHtml(field.getValue())).append("</div>\n");
                         html.append("                <div class='field-value'>").append(escapeHtml(value)).append("</div>\n");
