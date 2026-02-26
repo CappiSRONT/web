@@ -469,6 +469,14 @@ public class CountrySearchServer {
                     html.append("                <div class='field-value'>").append(escapeHtml(value)).append("</div>\n");
                     html.append("            </div>\n");
                 }
+                else if (value.equals("none") && field.getKey().equals("Official Name"))
+                {
+                    System.out.println("Data was found to be out of place or set to none.");
+                    html.append("            <div class='field'>\n");
+                    html.append("                <div class='field-label'>").append(escapeHtml(field.getValue())).append("</div>\n");
+                    html.append("                <div class='field-value'>").append(escapeHtml(field.getValue())).append("</div>\n");
+                    html.append("            </div>\n");
+                }
             }
             
             // Toggle button
