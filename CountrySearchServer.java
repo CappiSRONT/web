@@ -4,7 +4,7 @@ import java.net.*;
 import java.nio.file.*;
 import java.util.*;
 
-//Make the website look more 2000s like.
+//Make the website look more 2000s like
 
 public class CountrySearchServer {
 
