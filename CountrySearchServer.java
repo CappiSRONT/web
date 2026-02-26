@@ -457,6 +457,7 @@ public class CountrySearchServer {
             }        
             displayName = shortName;
             html.append("<h2 class='country-name'>").append(escapeHtml(displayName)).append("</h2>\n");
+            
             // Display main fields
             for (Map.Entry<String, String> field : DISPLAY_FIELDS.entrySet()) {
                 if (field.getKey().equals("Country")) continue;
@@ -464,11 +465,12 @@ public class CountrySearchServer {
                 if (!value.isEmpty()) {
                     if (field.equals("Official Name"))
                     {
-                        if (value.equals("None"))
+                        if (value.equals("none"))
                         {
+                            // These lines of code should fix the error where some alias's have a (none) written in the Offical Name.
                             html.append("            <div class='field'>\n");
                             html.append("                <div class='field-label'>").append(escapeHtml(field.getValue())).append("</div>\n");
-                            html.append("                <div class='field-value'>").append(escapeHtml(value)).append("</div>\n");
+                            html.append("                <div class='field-value'>").append(escapeHtml(field.getValue())).append("</div>\n");
                             html.append("            </div>\n");
                         }
                     }
