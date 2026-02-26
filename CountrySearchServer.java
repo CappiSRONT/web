@@ -462,28 +462,12 @@ public class CountrySearchServer {
             for (Map.Entry<String, String> field : DISPLAY_FIELDS.entrySet()) {
                 if (field.getKey().equals("Country")) continue;
                 String value = country.getOrDefault(field.getKey(), "").trim();
-                if (!value.isEmpty()) {
-                    if (field.equals("Official Name"))
-                    {
-                        System.out.println("Offical Name");
-                        if (value == "none")
-                        {
-                            // These lines of code should fix the error where some alias's have a (none) written in the Offical Name.
-                            System.out.println("Found country names that has a null value: " + field.getValue() + ". Fixing now!");
-                            html.append("            <div class='field'>\n");
-                            html.append("                <div class='field-label'>").append(escapeHtml(field.getValue())).append("</div>\n");
-                            html.append("                <div class='field-value'>").append(escapeHtml(field.getValue())).append("</div>\n");
-                            html.append("            </div>\n");
-                        }
-                    }
-                    else
-                    {
-                            System.out.println("Data was found to be normal.");
-                            html.append("            <div class='field'>\n");
-                            html.append("                <div class='field-label'>").append(escapeHtml(field.getValue())).append("</div>\n");
-                            html.append("                <div class='field-value'>").append(escapeHtml(value)).append("</div>\n");
-                            html.append("            </div>\n");
-                    }
+                if (!value.isEmpty() && !value.equals("none")) { 
+                    System.out.println("Data was found to be normal.");
+                    html.append("            <div class='field'>\n");
+                    html.append("                <div class='field-label'>").append(escapeHtml(field.getValue())).append("</div>\n");
+                    html.append("                <div class='field-value'>").append(escapeHtml(value)).append("</div>\n");
+                    html.append("            </div>\n");
                 }
             }
             
