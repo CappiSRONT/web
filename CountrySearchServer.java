@@ -465,7 +465,7 @@ public class CountrySearchServer {
                 if (!value.isEmpty()) {
                     if (field.equals("Official Name"))
                     {
-                        if (value.equals("none"))
+                        if (value == "none")
                         {
                             // These lines of code should fix the error where some alias's have a (none) written in the Offical Name.
                             System.out.println("Found country names that has a null value: " + field.getValue() + ". Fixing now!");
