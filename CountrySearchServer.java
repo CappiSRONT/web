@@ -477,11 +477,14 @@ public class CountrySearchServer {
                     }
                     else
                     {
-                        System.out.println("Found country name that does not have a null value: " + value);
-                        html.append("            <div class='field'>\n");
-                        html.append("                <div class='field-label'>").append(escapeHtml(field.getValue())).append("</div>\n");
-                        html.append("                <div class='field-value'>").append(escapeHtml(value)).append("</div>\n");
-                        html.append("            </div>\n");   
+                        if (value == "none")
+                        {
+                            System.out.println("Found country name that does not have a null value: " + value);
+                            html.append("            <div class='field'>\n");
+                            html.append("                <div class='field-label'>").append(escapeHtml(field.getValue())).append("</div>\n");
+                            html.append("                <div class='field-value'>").append(escapeHtml(displayName)).append("</div>\n");
+                            html.append("            </div>\n");      
+                        }
                     }
                 }
             }
