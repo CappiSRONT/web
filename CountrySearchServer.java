@@ -465,6 +465,7 @@ public class CountrySearchServer {
                 if (!value.isEmpty()) {
                     if (field.equals("Official Name"))
                     {
+                        System.out.println("Offical Name");
                         if (value == "none")
                         {
                             // These lines of code should fix the error where some alias's have a (none) written in the Offical Name.
@@ -477,22 +478,11 @@ public class CountrySearchServer {
                     }
                     else
                     {
-                        if (value == "none")
-                        {
-                            System.out.println("Found country name that does not have a null value: " + value);
-                            html.append("            <div class='field'>\n");
-                            html.append("                <div class='field-label'>").append(escapeHtml(field.getValue())).append("</div>\n");
-                            html.append("                <div class='field-value'>").append(escapeHtml(displayName)).append("</div>\n");
-                            html.append("            </div>\n");      
-                        }
-                        else
-                        {
-                            System.out.println("Found country name that does not have a null value: " + value);
+                            System.out.println("Data was found to be normal.");
                             html.append("            <div class='field'>\n");
                             html.append("                <div class='field-label'>").append(escapeHtml(field.getValue())).append("</div>\n");
                             html.append("                <div class='field-value'>").append(escapeHtml(value)).append("</div>\n");
-                            html.append("            </div>\n");      
-                        }
+                            html.append("            </div>\n")
                     }
                 }
             }
