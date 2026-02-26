@@ -469,7 +469,7 @@ public class CountrySearchServer {
                     html.append("                <div class='field-value'>").append(escapeHtml(value)).append("</div>\n");
                     html.append("            </div>\n");
                 }
-                else if (value.equals("none") && field.getKey().equals("Official Name"))
+                else if (value.equals("none") && field.getValue().equals("Official Name"))
                 {
                     System.out.println("Data was found to be out of place or set to none.");
                     html.append("            <div class='field'>\n");
