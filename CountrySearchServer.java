@@ -468,6 +468,7 @@ public class CountrySearchServer {
                         if (value.equals("none"))
                         {
                             // These lines of code should fix the error where some alias's have a (none) written in the Offical Name.
+                            System.out.println("Found country names that has a null value: " + displayname + ". Fixing now!");
                             html.append("            <div class='field'>\n");
                             html.append("                <div class='field-label'>").append(escapeHtml(field.getValue())).append("</div>\n");
                             html.append("                <div class='field-value'>").append(escapeHtml(field.getValue())).append("</div>\n");
@@ -543,7 +544,7 @@ public class CountrySearchServer {
                 else
                 {
                     displayName = name;
-                    System.out.println("FOund country name: " + name);
+                    System.out.println("Found country name: " + name);
                 }
                 String encoded = URLEncoder.encode(name, java.nio.charset.StandardCharsets.UTF_8);
                 html.append("<a href='/search?q=").append(encoded).append("' class='result-link'>\n");
