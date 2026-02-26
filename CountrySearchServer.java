@@ -482,7 +482,7 @@ public class CountrySearchServer {
                             html.append("            <div class='field'>\n");
                             html.append("                <div class='field-label'>").append(escapeHtml(field.getValue())).append("</div>\n");
                             html.append("                <div class='field-value'>").append(escapeHtml(value)).append("</div>\n");
-                            html.append("            </div>\n")
+                            html.append("            </div>\n");
                     }
                 }
             }
