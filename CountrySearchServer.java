@@ -471,7 +471,7 @@ public class CountrySearchServer {
                 }
                 else if (value.equals("none") && field.getValue().equals("Official Name"))
                 {
-                    System.out.println("Data was found to be out of place or set to none. The acutal data that is broken is in: " + field.getValue() + ". The data it was repaced with is: " + displayName);
+                    System.out.println("Data was found to be out of place or set to none. The acutal data that is broken is in: " + field.getValue() + "( "+ value +" )"+ ". The data it was repaced with is: " + displayName);
                     html.append("            <div class='field'>\n");
                     html.append("                <div class='field-label'>").append(escapeHtml(field.getValue())).append("</div>\n");
                     html.append("                <div class='field-value'>").append(escapeHtml(displayName)).append("</div>\n");
