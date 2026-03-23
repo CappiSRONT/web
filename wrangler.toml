@@ -1,0 +1,16 @@
+name = "natlas"
+main = "worker.js"
+compatibility_date = "2024-01-01"
+
+# ── Routes ────────────────────────────────────────────────────────────────────
+# Tells Cloudflare to send all natlas.org traffic to this worker
+routes = [
+  { pattern = "natlas.org/*", zone_name = "natlas.org" }
+]
+
+# ── KV Namespace ──────────────────────────────────────────────────────────────
+# Replace REPLACE_WITH_YOUR_KV_NAMESPACE_ID with the ID from the Cloudflare dashboard
+# Workers & Pages → KV → your NATLAS_KV namespace → copy the ID
+[[kv_namespaces]]
+binding = "NATLAS_KV"
+id = "REPLACE_WITH_YOUR_KV_NAMESPACE_ID"
